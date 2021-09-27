@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+<form action="/" method="post">
+    <table>
+        <tr>
+            <td><span><b>Product Name:</b></span></td>
+            <td>
+                <input type="text"  name="Name" placeholder="Product Name" class="form-control"><br>
+              
+            </td>
+        </tr>
+
+        <tr>
+            <td><span><b>Product Price:<b></span></td>
+            <td>
+                <input type="text" name="Price" placeholder="Product Price" class="form-control"><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td><span><b>Add Quantity:</b></span></td>
+            <td>
+                <input type="text" name="Quantity" placeholder="Qty" class="form-control"><br>
+            </td>
+        </tr>
+        <tr>
+            <td><span><b>Description:</b></span></td>
+            <td>
+                <input type="text" name="Description" placeholder="Description" class="form-control"><br>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><input type="submit"  value="Add Product" class="btn btn-success"></td>
+        </tr>
+
+
+    </table>
+</form>
