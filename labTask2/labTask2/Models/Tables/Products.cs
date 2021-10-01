@@ -58,9 +58,20 @@ namespace labTask2.Models.Tables
             return products;
         }
 
+        public void Edit(int Id, string Name, string Price, string Quantity, string Description)
+        {
+            string query = String.Format("UPDATE Products set ('{0}','{1}','{2}','{3}') where '{4}'", Name,Price, Quantity, Description,Id);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            int r = cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+        }
+
         public void Delete(int Id)
         {
-            string query = String.Format("Delete from Products where Id= @p.Id");
+            string query = String.Format("Delete from Products where Id={0}", Id);
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
             int r = cmd.ExecuteNonQuery();

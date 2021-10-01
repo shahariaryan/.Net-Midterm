@@ -37,12 +37,11 @@ namespace labTask2.Controllers
             return View();
         }
 
-
         public ActionResult Edit(int Id)
         {
-
-            return View();
+            
         }
+
         public ActionResult Delete(int Id)
         {
             Database db = new Database();

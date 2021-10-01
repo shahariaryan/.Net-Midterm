@@ -1,4 +1,5 @@
 ﻿@model List<labTask2.Models.Entity.Product>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -23,8 +24,8 @@
      <td>@p.Quantity</td>
      <td>@p.Description</td>
      <td>
-         <a href="@Url.Action("Edit","Product", new {@p.Id})" class="btn btn-success">Edit</a>
-         <a href="~/Models/Tables/Products/@p.Id" class="btn btn-danger">Delete</a>
+         <a href="@Url.Action("Edit",new {p.Id})" class="btn btn-success">Edit</a>
+         <a href="@Url.Action("Delete", new { p.Id})" class="btn btn-danger">Delete</a>
      </td>
    </tr>
    }
