@@ -26,9 +26,22 @@ namespace labTask2.Models.Tables
 
         }
 
-        public Product Get(int id)
+        public Product Get(int Id)
         {
-            return null;
+            string query = String.Format("select * from Products where Id={0}", Id);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            Product products = new Product();
+            products.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+            products.Name = reader.GetString(reader.GetOrdinal("Name"));
+            products.Price = reader.GetString(reader.GetOrdinal("Price"));
+            products.Quantity = reader.GetString(reader.GetOrdinal("Quantity"));
+            products.Description = reader.GetString(reader.GetOrdinal("Description"));
+
+            conn.Close();
+            return products;
         }
 
         public List<Product> GetAll()
@@ -58,14 +71,19 @@ namespace labTask2.Models.Tables
             return products;
         }
 
-        public void Edit(int Id, string Name, string Price, string Quantity, string Description)
+        internal object GetOneProduct(int id)
         {
-            string query = String.Format("UPDATE Products set ('{0}','{1}','{2}','{3}') where '{4}'", Name,Price, Quantity, Description,Id);
+            throw new NotImplementedException();
+        }
+
+        public void Edit(Product p)
+        {
+            string query = String.Format("update Products set Name='{0}',Price='{1}',Quantity='{2}',Description='{3}' where Id ={4}", p.Name, p.Price, p.Quantity,
+                p.Description, p.Id);
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
             int r = cmd.ExecuteNonQuery();
             conn.Close();
-
 
         }
 
@@ -79,6 +97,7 @@ namespace labTask2.Models.Tables
            
 
         }
+
         
     }
 }
