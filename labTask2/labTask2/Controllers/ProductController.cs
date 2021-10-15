@@ -42,9 +42,7 @@ namespace labTask2.Controllers
         public ActionResult Edit(int Id)
         {
             Database db = new Database();
-
             var p = db.Products.Get(Id);
-
             return View(p);
         }
 

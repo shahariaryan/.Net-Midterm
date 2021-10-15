@@ -18,10 +18,9 @@
                 @foreach (var p in Model)
                 {
                 <tr>
-                    <th scope="row">@p.Id</th>
+                    <th>@p.Id</th>
                     <td>@p.Name</td>
                     <td>@p.Price</td>
-                 
                     <td>@p.Description</td>
 
                 </tr>
@@ -29,5 +28,5 @@
             </tbody>
         </table>
     </div>
-    <input type="submit" value="Check out" class="btn btn-danger">
+    <input type="submit" value="Check out" class="btn btn-default">
 </form>

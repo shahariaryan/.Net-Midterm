@@ -24,9 +24,9 @@
     <td>@p.Quantity</td>
     <td>@p.Description</td>
     <td>
-        <a href="/Product/Edit?Id=@p.Id" class="btn btn-success">Edit</a>
-        <a href="@Url.Action("Delete", new { p.Id})" class="btn btn-danger">Delete</a>
-        <a href="/Product/Cart/@p.Id" class="btn btn-primary">Add to Cart</a>
+        <a href="/Product/Edit/@p.Id" class="btn btn-success">Edit</a>
+        <a href="/Product/Delete/@p.Id" class="btn btn-danger">Delete</a>
+        <a href="/Product/Cart/@p.Id" class="btn btn-default">Add to Cart</a>
     </td>
    
 </tr>

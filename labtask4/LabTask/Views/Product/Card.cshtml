@@ -1,0 +1,16 @@
+﻿@model List<LabTask.Models.Product>
+@{
+    ViewBag.Title = "Card";
+}
+
+<h2>Card</h2>
+<form action="/product/cart" method="post">
+    @foreach (var item in Model)
+    {
+        <p>Name: @item.ProductName</p>
+        <p>Price: @item.Price</p>
+        <p>Quantity: @item.Quantity</p><br />
+
+    }
+    <input type="submit" value="Checkout" class="btn btn-warning"/>
+</form>

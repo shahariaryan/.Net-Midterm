@@ -1,0 +1,18 @@
+﻿@model LabTask.Models.Product
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="/product/create" method="post">
+    Product Name : <input type="text" name="ProductName" class="form-control" />
+    @Html.ValidationMessageFor(m => m.ProductName, "", new { @class = "text-danger" })<br/>
+    Price: <input type="number" name="price" class="form-control" />
+    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })<br />
+    Quantity:<input type="number" name="Quantity" class="form-control" />
+    @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })<br />
+    Description: <input type="text" name="Description" class="form-control" />
+    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })<br />
+    <input type="submit" value="Add" class="btn btn-primary" />
+</form>
+
