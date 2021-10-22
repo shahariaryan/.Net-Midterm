@@ -1,0 +1,17 @@
+﻿@model ProjectMid.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LOGIN</h2>
+
+<form action="/Login/Index" method="post">
+    <input class="form-control" type="text" name="Uid" value="" placeholder="ID" />
+   
+    <input class="form-control" type="Password" name="password" value="" placeholder="Password" />
+  
+    <input class="form-control" type="submit" name="login" value="Login" />
+</form>
+<span>@TempData["ErrorMessage"]</span>
+<h4><a href="/Registration/Create">Not Registered Yet?</a></h4>
